@@ -1,0 +1,451 @@
+:root {
+  --bg: #f4ebd3; /* soft aged paper background */
+  --paper: #efe3c5;
+  --ink: #2d2a24;
+  --muted: #6b635b;
+  --accent: #3f6c6f;
+  --accent-light: #5c8a8f;
+  --radius: 12px;
+  --shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  --transition: 0.3s ease;
+}
+
+/* RESET */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Merriweather", serif;
+  background: var(--bg)
+    url("https://www.transparenttextures.com/patterns/aged-paper.png");
+  color: var(--ink);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* === RETURN BUTTON === */
+.return-btn {
+  position: fixed;
+  top: 18px;
+  left: 18px;
+  background: var(--accent);
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  box-shadow: var(--shadow);
+  transition: background var(--transition);
+  z-index: 200;
+}
+
+.return-btn:hover {
+  background: var(--accent-light);
+}
+
+/* === HEADER === */
+.header {
+  background: rgba(245, 237, 213, 0.96);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(8px);
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 14px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: "Merriweather", serif;
+  font-size: 1.7rem;
+  color: var(--accent);
+  letter-spacing: 0.5px;
+}
+
+.nav a {
+  margin-left: 20px;
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color var(--transition);
+}
+
+.nav a:hover {
+  color: var(--accent);
+}
+
+/* === HERO === */
+.hero {
+  position: relative;
+  height: 75vh;
+  background: url("https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=1600&q=80")
+    center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+}
+
+.hero .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(25, 20, 15, 0.55);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+  padding: 20px;
+}
+
+.hero h2 {
+  font-family: "Merriweather", serif;
+  font-size: 2.6rem;
+  margin-bottom: 16px;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.6);
+}
+
+.hero p {
+  color: #f5f1e9;
+  margin-bottom: 25px;
+}
+
+.btn {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  padding: 12px 28px;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all var(--transition);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.btn:hover {
+  background: var(--accent-light);
+  transform: translateY(-2px);
+}
+
+.btn.small {
+  padding: 8px 18px;
+  font-size: 0.9rem;
+}
+
+/* === MAIN === */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 24px;
+}
+
+.section-title {
+  font-family: "Merriweather", serif;
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+  color: var(--accent);
+}
+
+.section-desc {
+  text-align: center;
+  color: var(--muted);
+  max-width: 600px;
+  margin: 0 auto 40px;
+}
+
+/* === BOOK GRID === */
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 35px;
+}
+
+.book-card {
+  background: var(--paper);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  transition: all var(--transition);
+}
+
+.book-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+}
+
+.book-cover {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  max-height: 550px;
+  object-fit: contain;
+  background: var(--paper);
+  display: block;
+  margin-bottom: 18px;
+}
+
+.book-info {
+  padding: 0 16px;
+  text-align: center;
+}
+
+.book-info h3 {
+  font-family: "Merriweather", serif;
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  color: var(--ink);
+}
+
+.author {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+.desc {
+  color: var(--ink);
+  font-size: 0.95rem;
+  margin-bottom: 12px;
+}
+
+/* === ABOUT === */
+.about {
+  background: linear-gradient(180deg, #f5ead5 0%, #ede1c4 100%);
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.about-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.about-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.about-text h2 {
+  font-family: "Merriweather", serif;
+  font-size: 2rem;
+  color: var(--accent);
+  margin-bottom: 20px;
+}
+
+.about-text p {
+  color: var(--ink);
+  max-width: 600px;
+  font-size: 1rem;
+}
+
+.about-image {
+  flex: 1;
+  text-align: right;
+}
+
+.about-image img {
+  width: 100%;
+  max-width: 450px;
+  border-radius: var(--radius);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* === CONTACT === */
+.contact {
+  background: #ede1c4;
+  text-align: center;
+  padding: 60px 24px;
+}
+
+.contact h2 {
+  font-family: "Merriweather", serif;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+
+.contact p {
+  color: var(--muted);
+}
+
+.contact .email {
+  font-weight: 600;
+  color: var(--ink);
+  margin-top: 10px;
+}
+
+/* === FOOTER === */
+.footer {
+  background: #e4d7b8;
+  text-align: center;
+  padding: 18px 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .hero h2 {
+    font-size: 2rem;
+  }
+  .about-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+  .about-image img {
+    max-width: 100%;
+  }
+  .book-cover {
+    max-height: 400px;
+  }
+  .return-btn {
+    top: 12px;
+    left: 12px;
+    padding: 8px 14px;
+    font-size: 0.85rem;
+  }
+}
+html {
+  scroll-behavior: smooth;
+}
+
+/* Fade-in animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* === BOOK SLIDER === */
+.slider-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 20px 40px; /* Added padding so arrows have space */
+}
+
+.book-slider {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Hide scrollbar in Firefox */
+}
+
+.book-slider::-webkit-scrollbar {
+  display: none; /* Hide scrollbar in Chrome/Safari */
+}
+
+.book-card {
+  flex: 0 0 260px;
+  margin: 0 15px;
+  background-color: #fffef8;
+  border-radius: 15px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+  text-align: center;
+}
+
+.book-card:hover {
+  transform: scale(1.05);
+}
+
+.book-cover {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 15px 15px 0 0;
+}
+
+.book-info {
+  padding: 15px;
+}
+
+.book-info h3 {
+  font-family: "Merriweather", serif;
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 6px;
+  text-transform: capitalize;
+}
+
+.book-info .author {
+  color: #555;
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+}
+
+.book-info .desc {
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+.book-info .btn.small {
+  background-color: #f0d48c;
+  color: #222;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.book-info .btn.small:hover {
+  background-color: #e2c779;
+}
+
+/* === SLIDER BUTTONS === */
+.slider-container button.prev,
+.slider-container button.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #f3e6c2;
+  border: none;
+  font-size: 26px;
+  padding: 10px 16px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  transition: 0.3s;
+  z-index: 10; /* ✅ keeps arrows above the books */
+}
+
+.slider-container button.prev:hover,
+.slider-container button.next:hover {
+  background-color: #e2c779;
+}
+
+.slider-container button.prev {
+  left: 10px;
+}
+
+.slider-container button.next {
+  right: 10px;
+}
